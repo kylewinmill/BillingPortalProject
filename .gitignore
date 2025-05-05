@@ -4,4 +4,5 @@ node_modules/
 /playwright/.cache/
 /authetication
 .env
+.env.local
 playwright/.auth/user.json
