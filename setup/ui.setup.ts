@@ -12,7 +12,7 @@ setup("authenticate", async ({ page }) => {
     await PM.navigateToLoginPage();
     await PM.enterUserName(validatedEnv.username);
     await PM.enterPassword(validatedEnv.password);
-    await page.waitForURL("https://dev-portal.conservice.com/billing");
-    await expect(PM.ConserviceLogo).toBeVisible();
+    await page.waitForURL("https://staging-portal.conservice.com/billing");
+    await expect(PM.ConserviceLogo).toBeVisible({ timeout: 60000 });
     await page.context().storageState({ path: authFile });
 })

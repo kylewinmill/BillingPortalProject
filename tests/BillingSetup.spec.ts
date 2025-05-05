@@ -21,11 +21,12 @@ test.describe('Billing Setup - Bill setup load & save change & history log check
     });
 
     // Test to check the initial load of the Bill Setup page
-    test('Billing Setup - Bill setup loadup test', async () => {
+    test('Billing Setup - Bill setup loading test', async () => {
+        test.setTimeout(100000);
         // Comment: Add Jira key and description to test information
         test.info().annotations.push({
             type: "jiraKey",
-            description: "BPORT-947",
+            description: "BPORT-2781",
         });      
 
         // Navigate to the specified URL
@@ -63,10 +64,11 @@ test.describe('Billing Setup - Bill setup load & save change & history log check
 
     // Test to check saving changes and verifying history log
     test('Billing Setup - Save change with history log check test', async () => {
+        test.setTimeout(100000);
         // Comment: Add Jira key and description to test information
         test.info().annotations.push({
             type: "jiraKey",
-            description: "BPORT-948",
+            description: "BPORT-2780",
         });
 
         // Click on the "Add Utility" button

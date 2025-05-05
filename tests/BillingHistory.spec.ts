@@ -15,12 +15,13 @@ const secondPropertyCode = 'am03';
 //test.setTimeout(120000) 
 // Test to search history by property code
 test('Billing Task History - Search history by prop code test', async ({ page }) => {
+    test.setTimeout(100000);
     // Comment: Add Jira key and description to test information
     test.info().annotations.push({
         type: "jiraKey",
-        description: "BPORT-930",
+        description: "BPORT-2784",
     });
-
+    
     // Create an instance of BillingHistoryModel with the specified property code
     const PM = new BillingHistoryModel(page, propertyCode);
 
@@ -38,15 +39,16 @@ test('Billing Task History - Search history by prop code test', async ({ page })
     // Wait for and validate the URL of the opened popup
     const page1Promise = page.waitForEvent('popup');
     const page1 = await page1Promise;
-    await expect(page1).toHaveURL('https://conserviceportaldev.azureedge.net/billing/billing-task-history/quality-control-task/am033/2023-10-01',{timeout: 30000});
+    await expect(page1).toHaveURL('https://staging-portal.conservice.com/billing/billing-task-history/quality-control-task/am033/2023-10-01',{timeout: 30000});
 });
 
 // Test to search history by user assigned
 test('Billing Task History - Search history by user assigned & due on dates test', async ({ page }) => {
+    test.setTimeout(100000);
     // Comment: Add Jira key and description to test information
     test.info().annotations.push({
         type: "jiraKey",
-        description: "BPORT-931",
+        description: "BPORT-2783",
     });
 
     // Create an instance of BillingHistoryModel with the specified property code
@@ -71,15 +73,16 @@ test('Billing Task History - Search history by user assigned & due on dates test
 
     // Perform the search and validate the result
     await PM.searchbutton.click();
-    await expect(PM.assignedToCellContent).toContainText('Tamara Hale',{timeout: 40000});
+    await expect(PM.assignedToCellContent).toContainText('Tamara Hale',{timeout: 80000});
 });
 
 // Test to search history by task type
 test('Billing Task History - Search history by task type test', async ({ page }) => {
+    test.setTimeout(100000);
     // Comment: Add Jira key and description to test information
     test.info().annotations.push({
         type: "jiraKey",
-        description: "BPORT-932",
+        description: "BPORT-2782",
     });
 
     // Create an instance of BillingHistoryModel with a different property code

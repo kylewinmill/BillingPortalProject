@@ -1,5 +1,7 @@
-import { defineConfig, devices } from '@playwright/test';
-import { on } from 'events';
+import { defineConfig, devices } from "@playwright/test";
+//detects if the environment is local or CI: Then selects .env or .env.local
+const CI = process.env.CI == "true";
+require("dotenv").config({ path: CI ? ".env" : ".env.local" });
 
 /**
  * Read environment variables from file.
@@ -21,7 +23,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   // reporter: [['./utils/reporter.ts'], ['html']],
-  reporter: [['./utils/reporter.ts'], ['html']],
+  //reporter: [['./utils/reporter.ts'], ['html']],
   timeout: 60000,
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {

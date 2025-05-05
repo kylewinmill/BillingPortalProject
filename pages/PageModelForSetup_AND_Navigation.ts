@@ -16,14 +16,15 @@ this.FusionPageCrumbTextOnly = page.getByText('Fusion Portal');
 this.AccountAssignmentNavigationCard =  page.getByRole('button', { name: 'Account Assignment Setup utility provider accounts specifically for billing.' })
 this.FusionPortalCrumbLink = page.getByRole('link', { name: 'Fusion Portal' });
 this.SettingsNavigationCard = page.getByRole('button', { name: 'Settings Fusion run settings for Management Companies, States, etc...' })
-this.ConserviceLogo = page.locator('div').filter({ hasText: 'The Utility Experts' }).nth(2);
+this.ConserviceLogo = page.getByText('The Utility Experts');
+
 
 
 
 
 }
   async navigateToLoginPage(){
-    await this.page.goto('https://dev-portal.conservice.com/billing');
+    await this.page.goto('https://staging-portal.conservice.com/billing');
 
   }
 

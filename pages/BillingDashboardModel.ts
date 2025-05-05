@@ -4,6 +4,7 @@ export class BillingDashboardModel{
 billingActivity: Locator;
 billingData: Locator;
 communityDetails: Locator;
+fifthPropertyInList: Locator;
 firstPropertyInList: Locator;
 notes: Locator;
 searchButton: Locator;
@@ -21,6 +22,7 @@ this.page = page;
 this.billingActivity = page.getByRole('tab', { name: 'Sequential' });
 this.billingData = page.getByText('Due Date:');
 this.communityDetails = page.getByText('Property Code:');
+this.fifthPropertyInList = page.locator('.MuiDataGrid-row > div:nth-child(2)').nth(4);
 this.firstPropertyInList = page.locator('.MuiDataGrid-row > div:nth-child(2)').first();
 this.notes = page.getByRole('button', { name: 'Notes' });
 this.searchButton = page.getByRole('button', { name: 'Search' });
